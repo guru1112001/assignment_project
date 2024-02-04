@@ -1,0 +1,17 @@
+<!-- registration/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Registration App{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'registration:registration_list' %}">Registration List</a> |
+        <a href="{% url 'registration:registration_create' %}">Create Registration</a>
+    </nav>
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

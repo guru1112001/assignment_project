@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration Detail{% endblock %}
+
+{% block content %}
+    <h1>Registration Detail</h1>
+    <p>Name: {{ registration.name }}</p>
+    <p>Email: {{ registration.email }}</p>
+    <p>Date of Birth: {{ registration.date_of_birth }}</p>
+    <a href="{% url 'registration:registration_edit' pk=registration.pk %}">Edit</a>
+    <form action="{% url 'registration:registration_delete' pk=registration.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+{% endblock %}

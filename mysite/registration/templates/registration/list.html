@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration List{% endblock %}
+
+{% block content %}
+    <h1>Registration List</h1>
+    <ul>
+        {% for registration in registrations %}
+            <li><a href="{% url 'registration:registration_detail' pk=registration.pk %}">{{ registration.name }}</a></li>
+        {% empty %}
+            <li>No registrations found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
